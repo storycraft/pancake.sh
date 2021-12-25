@@ -7,7 +7,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Icon } from "../element/icon";
-import { Parallel } from "../effect/parallel";
+import { ParallelBlock } from "../parallel-block";
 
 const BannerContainer = styled.div`{
     width: 100%;
@@ -34,7 +34,7 @@ const BannerText = styled.span`
 export function BannerSection(prop: { name: string }) {
     return <BannerContainer>
         <div style={{ margin: 'auto' }}>
-            <Parallel layer={0}><BannerText>{prop.name}</BannerText></Parallel>
+            <ParallelBlock layer={0}><BannerText>{prop.name}</BannerText></ParallelBlock>
         </div>
         <Icon style={{ fontSize: '3rem', textAlign: 'right' }}>expand_more</Icon>
     </BannerContainer>;
