@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel frontend/index.html",
-    "build": "ts-node pre-renderer.ts && parcel build .ssr/index.html"
+    "build": "ts-node pre-renderer.ts && parcel build .ssr/index.html --dist-dir docs"
   },
   "author": {
     "name": "storycraft",
