@@ -5,17 +5,13 @@
  */
 
 import React from "react";
-import { hydrate, render } from "react-dom";
+import { render } from "react-dom";
 
 import { PancakeApp } from './app';
 
 window.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
 
-    if (process.env.NODE_ENV === 'development') {
-        render(<PancakeApp />, root)
-    } else {
-        hydrate(<PancakeApp />, root);
-    }
+    render(<PancakeApp />, root);
 });
 
