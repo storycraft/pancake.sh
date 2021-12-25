@@ -4,15 +4,16 @@
  * Copyright (c) storycraft. Licensed under the MIT Licence.
  */
 
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { Icon } from "../element/icon";
-import { ParallelBlock } from "../parallel-block";
+import { ParallaxBlock } from "../parallax-block";
 
 const BannerContainer = styled.div`{
     width: 100%;
     height: 100%;
     display: flex;
+    background-color: rgb(20, 20, 20);
     flex-direction: column;
 }`;
 
@@ -22,20 +23,50 @@ const BannerText = styled.span`
     font-size: 4rem;
     user-select: none;
 
+    padding: 0.8rem 2rem;
+
     margin: auto;
 
-    transition: color 0.25s;
+    border-radius: 0.8rem;
+
+    border: 4px solid rgba(0, 0, 0, 0);
+    
+    transition: background-color 0.25s, color 0.25s, border 0.25s;
 }
 
 :hover {
-    color: rgb(170, 110, 240);
+    border: 4px solid rgb(240, 240, 240);
+}
+
+:active {
+    background-color: rgb(240, 240, 240);
+    color: rgb(20, 20, 20);
 }`;
 
-export function BannerSection(prop: { name: string }) {
-    return <BannerContainer>
+const NAME = "pancake.sh";
+
+export function BannerSection() {
+    const ref = useRef<HTMLDivElement | null>(null);
+
+    function scrollDown() {
+        if (ref.current) {
+            window.scroll({
+                top: ref.current.getBoundingClientRect().height,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    return <BannerContainer ref={ref}>
         <div style={{ margin: 'auto' }}>
-            <ParallelBlock layer={0}><BannerText>{prop.name}</BannerText></ParallelBlock>
+            <ParallaxBlock layer={0}>
+                <BannerText>{NAME}</BannerText>
+            </ParallaxBlock>
         </div>
-        <Icon style={{ fontSize: '3rem', textAlign: 'right' }}>expand_more</Icon>
+        <ParallaxBlock layer={1}>
+            <div style={{ textAlign: 'center' }}>
+                <Icon style={{ fontSize: '3rem', cursor: 'pointer', padding: '3rem' }} onClick={scrollDown}>expand_more</Icon>
+            </div>
+        </ParallaxBlock>
     </BannerContainer>;
 }

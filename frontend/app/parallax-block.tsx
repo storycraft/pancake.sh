@@ -7,9 +7,9 @@
 import React, { PropsWithChildren, useEffect } from "react";
 import { useRef } from "react";
 
-export function ParallelBlock(prop: PropsWithChildren<{ layer: number }>) {
+export function ParallaxBlock(prop: PropsWithChildren<{ layer: number }>) {
     const layerRef = useRef<HTMLDivElement | null>(null);
-    const multipier = prop.layer + 1;
+    const multipier = (prop.layer + 1) * 0.5;
 
     useEffect(() => {
         let lock = false;

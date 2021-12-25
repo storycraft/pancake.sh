@@ -6,16 +6,17 @@
 
 import React from "react";
 import styled from "styled-components";
-import { Placeholder } from "./placeholder";
 import { BannerSection } from "./section/banner";
+import { FooterSection } from "./section/footer";
 
 const AppContainer = styled.div`{
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(30, 30, 30);
+    overflow-x: hidden;
 }`;
 
 export function PancakeApp() {
     return <AppContainer>
-        <BannerSection name="pancake.sh" />
-        <Placeholder />
+        <BannerSection />
+        <FooterSection />
     </AppContainer>;
 }

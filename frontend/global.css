@@ -8,6 +8,12 @@ html, body {
     overflow: overlay;
     margin: 0px 0px;
     padding: 0px 0px;
+    color:rgb(255, 255, 255);
+}
+
+::selection {
+    background-color: rgb(78, 47, 116);
+    color: rgb(255, 255, 255);
 }
 
 *::-webkit-scrollbar {
