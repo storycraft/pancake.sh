@@ -4,7 +4,7 @@
  * Copyright (c) storycraft. Licensed under the MIT Licence.
  */
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Icon } from "../element/icon";
 import { ParallaxBlock } from "../parallax-block";
@@ -13,35 +13,47 @@ const BannerContainer = styled.div`{
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(20, 20, 28);
     flex-direction: column;
 }`;
 
 const BannerText = styled.span`
 {
     color: rgb(240, 240, 240);
-    font-size: 4rem;
+    font-size: 3.4rem;
     user-select: none;
 
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 1rem;
 
     margin: auto;
 
     border-radius: 0.8rem;
 
-    border: 4px solid rgba(0, 0, 0, 0);
+    border: 4px solid rgb(240, 240, 240);
     
-    transition: background-color 0.25s, color 0.25s, border 0.25s;
+    transition: background-color 0.25s, color 0.25s;
 }
 
 :hover {
-    border: 4px solid rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
+    color: black;
+}`;
+
+const Square = styled.div`{
+    display: inline-block;
+    border-radius: 2px;
+    background-color: rgba(200, 200, 200, 1.0);
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+
+    transition: transform 0.3s;
 }
 
-:active {
-    background-color: rgb(240, 240, 240);
-    color: rgb(20, 20, 20);
-}`;
+:hover {
+    transform: rotate(405deg);
+}
+`;
 
 const NAME = "pancake.sh";
 
@@ -57,7 +69,28 @@ export function BannerSection() {
         }
     }
 
+    const containers: JSX.Element[] = [];
+
+    const count = Math.floor(Math.random() * 12) + 16;
+
+    let oX = 0;
+    for (let i = 0; i < count; i++) {
+        const depth = 2 + i % 4;
+
+        oX += 1 / count;
+
+        const x = oX;
+        const y = 0.025 + Math.random() * 0.95;
+
+        containers.push(
+            <ParallaxBlock key={i} layer={depth} style={{ position: 'absolute', left: x * 100 + '%', top: y * 100 + '%' }}>
+                <Square />
+            </ParallaxBlock>
+        );
+    }
+
     return <BannerContainer ref={ref}>
+        <div>{containers}</div>
         <div style={{ margin: 'auto' }}>
             <ParallaxBlock layer={0}>
                 <BannerText>{NAME}</BannerText>
@@ -65,7 +98,7 @@ export function BannerSection() {
         </div>
         <ParallaxBlock layer={1}>
             <div style={{ textAlign: 'center' }}>
-                <Icon style={{ fontSize: '3rem', cursor: 'pointer', padding: '3rem' }} onClick={scrollDown}>expand_more</Icon>
+                <Icon style={{ fontSize: '3rem', padding: '3rem' }} onClick={scrollDown}>expand_more</Icon>
             </div>
         </ParallaxBlock>
     </BannerContainer>;
