@@ -9,11 +9,9 @@ import styled from "styled-components";
 
 const ProjectsContainer = styled.div`{
     padding: 2rem 3rem;
-    font-size: 1.2rem;
 }`;
 
 const ProjectHead = styled.h1`{
-    font-size: 2rem;
     margin: 0px 0px 2rem 0px;
     user-select: none;
     color: rgb(200, 200, 200);
