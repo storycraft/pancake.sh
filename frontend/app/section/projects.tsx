@@ -29,7 +29,7 @@ const ListItemContainer = styled.a`{
     color: rgb(220, 220, 220);
     text-decoration: none;
 
-    border-radius: 4px;
+    border-radius: 8px;
     border: 2px solid rgb(180, 180, 180);
 }
 
