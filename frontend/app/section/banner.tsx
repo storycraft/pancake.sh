@@ -40,8 +40,8 @@ const BannerText = styled.span`
 const Square = styled.div`{
     display: inline-block;
     background-color: rgba(200, 200, 200, 1.0);
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
     transform: rotate(0deg);
 
     transition: transform 0.2s;
