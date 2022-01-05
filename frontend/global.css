@@ -4,6 +4,12 @@
  * Copyright (c) storycraft. Licensed under the MIT Licence.
  */
 
+@import url('//cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.530/neodgm/style.css');
+
+html {
+    font-family: 'NeoDunggeunmo';
+}
+
 html, body {
     overflow: hidden overlay;
     margin: 0px 0px;

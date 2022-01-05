@@ -7,13 +7,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const ProjectsContainer = styled.div`{
+const ProjectsContainer = styled.section`{
     padding: 2rem 3rem;
 }`;
 
 const ProjectHead = styled.h1`{
     margin: 0px 0px 2rem 0px;
     user-select: none;
+    font-weight: normal;
+    font-size: 3rem;
     color: rgb(200, 200, 200);
 }`;
 
@@ -29,17 +31,16 @@ const ListItemContainer = styled.a`{
     color: rgb(220, 220, 220);
     text-decoration: none;
 
-    border-radius: 8px;
-    border: 2px solid rgb(180, 180, 180);
+    border: 4px solid rgb(180, 180, 180);
 }
 
 :hover {
-    border: 2px solid rgb(220, 220, 220);
+    border: 4px solid rgb(220, 220, 220);
 }`;
 
 const ListItemName = styled.h2`{
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: normal;
+    font-size: 2rem;
 }`;
 
 export function ProjectsSection() {

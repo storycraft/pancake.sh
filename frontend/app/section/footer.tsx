@@ -7,7 +7,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Footer = styled.div`{
+const Footer = styled.footer`{
     background-color: rgb(42, 42, 52);
     padding: 3rem 3rem;
 }`;

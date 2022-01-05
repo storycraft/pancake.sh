@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { Icon } from "../element/icon";
 import { ParallaxBlock } from "../parallax-block";
 
-const BannerContainer = styled.div`{
+const BannerContainer = styled.header`{
     width: 100%;
     height: 100%;
     display: flex;
@@ -20,14 +20,12 @@ const BannerContainer = styled.div`{
 const BannerText = styled.span`
 {
     color: rgb(240, 240, 240);
-    font-size: 3.4rem;
+    font-size: 4rem;
     user-select: none;
 
     padding: 0.8rem 1rem;
 
     margin: auto;
-
-    border-radius: 0.8rem;
 
     border: 4px solid rgb(240, 240, 240);
     
@@ -41,17 +39,16 @@ const BannerText = styled.span`
 
 const Square = styled.div`{
     display: inline-block;
-    border-radius: 2px;
     background-color: rgba(200, 200, 200, 1.0);
     width: 8px;
     height: 8px;
-    transform: rotate(45deg);
+    transform: rotate(0deg);
 
-    transition: transform 0.3s;
+    transition: transform 0.2s;
 }
 
 :hover {
-    transform: rotate(405deg);
+    transform: rotate(360deg);
 }
 `;
 
