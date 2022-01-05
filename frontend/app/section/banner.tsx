@@ -70,11 +70,11 @@ export function BannerSection() {
 
     const count = Math.floor(Math.random() * 12) + 16;
 
-    let oX = 0;
+    let oX = 0.01;
     for (let i = 0; i < count; i++) {
         const depth = 2 + i % 4;
 
-        oX += 1 / count;
+        oX += (1 / count) * 0.98;
 
         const x = oX;
         const y = 0.025 + Math.random() * 0.95;
