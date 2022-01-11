@@ -14,8 +14,6 @@ const Footer = styled.footer`{
 
 const Text = styled.p`{
     color: rgb(120, 120, 120);
-
-    margin: 0px;
 }`;
 
 const NAME: string = 'storycraft';
@@ -24,8 +22,9 @@ const EMAIL: string = 'storycraft@pancake.sh';
 export function FooterSection() {
     return <Footer>
         <Text>Contact Detail</Text>
-        <br />
-        <Text>{NAME}</Text>
-        <Text>{EMAIL}</Text>
+        <Text>
+            {NAME}
+            <address>{EMAIL}</address>
+        </Text>
     </Footer>;
 }
