@@ -1,29 +1,32 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "lib": [
-      "ES2018",
-      "DOM"
+      "DOM",
+      "ESNext"
     ],
-    "module": "commonjs",
-    "jsx": "react",
-    "moduleResolution": "node",
-    "target": "ES2018",
-    "noImplicitAny": true,
-    "removeComments": false,
-    "strict": true,
-    "pretty": false,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "types": [
+      "astro/client"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "classnameTransform": "camelCase"
+        }
+      }
+    ]
   },
-  "include": [
-    "frontend/**/*",
-    "pre-renderer.ts"
+  "files": [
+    "./eslint.config.mjs",
+    "./astro.config.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "**/*.spec.ts",
-    "**/node_modules/*"
+  "include": [
+    "./.storybook/**/*",
+    "./src"
   ]
 }
