@@ -16,7 +16,7 @@ export function BannerSection() {
   }
 
   const containers: JSX.Element[] = [];
-  const count = Math.floor(Math.random() * 12) + 16;
+  const count = 20;
   let oX = 0.01;
   for (let i = 0; i < count; i++) {
     const depth = 2 + i % 4;
@@ -52,8 +52,10 @@ export function BannerSection() {
         <div style={{ 'text-align': 'center' }}>
           <ExpandMore
             style={{
-              'font-size': '3rem',
-              'padding': '3rem',
+              width: '48px',
+              height: '48px',
+              fill: 'white',
+              padding: '3rem',
             }}
             onClick={scrollDown}
           />

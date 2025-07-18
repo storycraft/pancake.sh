@@ -6,12 +6,11 @@ html {
 
 html,
 body {
-  overflow: hidden overlay;
   margin: 0px 0px;
   padding: 0px 0px;
-  width: 100%;
-  height: 100%;
   color: rgb(255, 255, 255);
+  min-height: 100%;
+  background-color: rgb(30, 30, 42);
 }
 
 ::selection {
