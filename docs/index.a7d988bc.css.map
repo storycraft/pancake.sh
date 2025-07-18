@@ -1,1 +1,0 @@
-{"mappings":"AAMA,UACA,QAAA,CACA,SACA","sources":["frontend/global.css"],"sourcesContent":["/*\n * Created on Sat Dec 25 2021\n *\n * Copyright (c) storycraft. Licensed under the MIT Licence.\n */\n\nhtml, body {\n    margin: 0px 0px;\n    padding: 0px 0px;\n}\n"],"names":[],"version":3,"file":"index.a7d988bc.css.map"}
