@@ -4,6 +4,7 @@
   display: flex;
   background-color: rgb(20, 20, 28);
   flex-direction: column;
+  position: relative;
 }
 
 .banner-text {
@@ -20,7 +21,7 @@
   transition: background-color 0.25s, color 0.25s;
 }
 
-.text:hover {
+.banner-text:hover {
   background-color: rgb(240, 240, 240);
   color: black;
 }

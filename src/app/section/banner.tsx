@@ -51,7 +51,6 @@ export function BannerSection() {
       <ParallaxBlock layer={1}>
         <div style={{ 'text-align': 'center' }}>
           <ExpandMore
-            component="div"
             style={{
               'font-size': '3rem',
               'padding': '3rem',
