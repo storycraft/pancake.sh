@@ -11,6 +11,7 @@
   background: linear-gradient(transparent, rgb(0, 0, 0, .25));
   opacity: .5;
   transition: opacity .5s;
+  justify-content: end;
 }
 
 .container:hover {
