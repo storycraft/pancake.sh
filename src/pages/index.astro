@@ -1,11 +1,34 @@
 ---
-import './index.css';
-import { PancakeApp } from '../app';
+import { Octokit } from "@octokit/rest";
+import "./index.css";
+import Home from "../templates/home/index.astro";
+import Contact from "../templates/contact/index.astro";
+import { Footer } from "../components/footer";
+
+const octokit = new Octokit();
+const { data: profile } = await octokit.users.getByUsername({
+  username: "storycraft",
+});
+const email = 'storycraft@pancake.sh';
 ---
+
 <html>
   <head>
     <title>Access a new world!</title>
     <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
   </head>
-  <body><PancakeApp client:load /></body>
+  <body>
+    <Home
+      name={profile.name || ""}
+      status={profile.bio || ""}
+      profileUrl={profile.avatar_url}
+      url={profile.url}
+    />
+    <Contact email={email} />
+    <Footer
+      name={`${profile.name} / ${profile.login}`}
+      email={email}
+    />
+  </body>
 </html>

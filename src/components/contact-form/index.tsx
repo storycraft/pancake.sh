@@ -1,5 +1,5 @@
 import { Button, TextField } from '@suid/material';
-import { form } from './index.module.css';
+import { body, form } from './index.module.css';
 
 export type ContactFormProps = {
   onSubmit: (
@@ -32,6 +32,7 @@ export function ContactForm(
         name="name"
         label="Name"
         type="text"
+        size="small"
         required
       />
       <TextField
@@ -39,6 +40,7 @@ export function ContactForm(
         name="email"
         label="Email"
         type="email"
+        size="small"
         required
       />
       <TextField
@@ -48,6 +50,8 @@ export function ContactForm(
         multiline
         type="text"
         rows={10}
+        class={body}
+        size="small"
         required
       />
       <Button

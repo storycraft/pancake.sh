@@ -1,0 +1,17 @@
+---
+import { Contact } from './components';
+
+type Props = {
+  email: string;
+};
+---
+
+<style>
+  .contact-container {
+    box-sizing: border-box;
+    padding: 2rem;
+  }
+</style>
+<div class="contact-container">
+  <Contact email={Astro.props.email} client:only />
+</div>

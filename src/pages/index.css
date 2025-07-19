@@ -1,16 +1,14 @@
-@import url('//cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.530/neodgm/style.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
-  font-family: 'NeoDunggeunmo';
+  font-family: "Noto Sans KR", "Noto Sans", sans-serif;
 }
 
 html,
 body {
   margin: 0px 0px;
   padding: 0px 0px;
-  color: rgb(255, 255, 255);
-  min-height: 100%;
-  background-color: rgb(30, 30, 42);
+  color-scheme: dark;
 }
 
 ::selection {

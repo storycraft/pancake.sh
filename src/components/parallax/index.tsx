@@ -8,7 +8,7 @@ export function ParallaxContainer<T extends keyof JSX.HTMLElementTags>(
   return (
     <Dynamic
       {...props}
-      class={`${props.class || ''} ${container}`}
+      class={`${container} ${props.class || ''}`}
     />
   );
 }

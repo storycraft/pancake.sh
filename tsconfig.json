@@ -9,21 +9,22 @@
     "jsxImportSource": "solid-js",
     "skipLibCheck": true,
     "isolatedModules": true,
-    "types": [
-      "astro/client"
-    ],
     "plugins": [
       {
         "name": "typescript-plugin-css-modules",
         "options": {
           "classnameTransform": "camelCase"
         }
+      },
+      {
+        "name": "@astrojs/ts-plugin"
       }
     ]
   },
   "files": [
     "./eslint.config.mjs",
-    "./astro.config.ts"
+    "./astro.config.ts",
+    ".astro/types.d.ts"
   ],
   "include": [
     "./.storybook/**/*",

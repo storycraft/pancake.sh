@@ -1,13 +1,9 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-.input {
-  border-radius: 99999px;
-  border: 1px solid black;
-  font-size: 1em;
-  width: 100%;
-  box-sizing: border-box;
+.body {
+  resize: vertical;
 }

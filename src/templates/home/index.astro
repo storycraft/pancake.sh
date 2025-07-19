@@ -1,0 +1,30 @@
+---
+import { StarsBackground, BackgroundImage, Profile } from "./components";
+import LandscapeImage from "./landscape.png?url";
+
+type Props = {
+  name: string;
+  status: string;
+  profileUrl: string;
+  url: string;
+};
+---
+
+<style>
+  .container {
+    background-color: rgb(20, 20, 28);
+    position: relative;
+    height: 100vh;
+  }
+</style>
+<section class="container">
+  <BackgroundImage imageUrl={LandscapeImage} />
+  <StarsBackground client:only />
+  <Profile
+    name={Astro.props.name}
+    status={Astro.props.status}
+    profileUrl={Astro.props.profileUrl}
+    url={Astro.props.url}
+    client:load
+  />
+</section>
