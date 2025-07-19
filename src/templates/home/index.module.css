@@ -60,6 +60,10 @@
   transform: scale(.95, .95);
 }
 
+.profile-image-box {
+  position: relative;
+}
+
 .profile-image-box:hover .profile-image-effect {
   stroke: rgba(200, 200, 200, .25);
 }
