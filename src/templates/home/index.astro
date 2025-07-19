@@ -20,7 +20,7 @@ type Props = {
 </style>
 <section class="container">
   <BackgroundImage imageUrl={LandscapeImage} client:load />
-  <StarsBackground client:load client:only="solid-js" />
+  <StarsBackground client:only="solid-js" />
   <Profile
     name={Astro.props.name}
     status={Astro.props.status}
