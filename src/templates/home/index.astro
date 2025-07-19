@@ -1,5 +1,6 @@
 ---
-import { StarsBackground, BackgroundImage, Profile } from "./components";
+import { BackgroundImage, Profile } from "./components";
+import { StarsBackground } from './components/stars';
 import LandscapeImage from "./landscape.png?url";
 
 type Props = {
@@ -19,7 +20,7 @@ type Props = {
 </style>
 <section class="container">
   <BackgroundImage imageUrl={LandscapeImage} client:load />
-  <StarsBackground client:only="solid-js" />
+  <StarsBackground client:load client:only="solid-js" />
   <Profile
     name={Astro.props.name}
     status={Astro.props.status}

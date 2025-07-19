@@ -1,9 +1,3 @@
-.star-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 .background-container {
   position: absolute;
   width: 100%;
@@ -18,19 +12,6 @@
   top: -5%;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.star {
-  background-color: rgb(220, 220, 220);
-  width: 4px;
-  height: 4px;
-  transform: rotate(45deg);
-
-  transition: transform 0.2s;
-}
-
-.star:hover {
-  transform: rotate(405deg);
 }
 
 .profile-container {
