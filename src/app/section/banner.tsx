@@ -1,7 +1,7 @@
 import type { JSX } from 'solid-js/jsx-runtime';
-import { banner, bannerText, square } from './banner.module.css';
-import { ParallaxBlock } from '../parallax-block';
+import { banner, bannerText, square, header, starContainer } from './banner.module.css';
 import { ExpandMore } from '@suid/icons-material';
+import { ParallaxContainer, ParallaxItem } from '../../components/parallax';
 
 const NAME = 'pancake.sh';
 
@@ -15,7 +15,7 @@ export function BannerSection() {
     });
   }
 
-  const containers: JSX.Element[] = [];
+  const stars: JSX.Element[] = [];
   const count = 20;
   let oX = 0.01;
   for (let i = 0; i < count; i++) {
@@ -26,9 +26,10 @@ export function BannerSection() {
     const x = oX;
     const y = 0.025 + Math.random() * 0.95;
 
-    containers.push(
-      <ParallaxBlock
+    stars.push(
+      <ParallaxItem
         layer={depth}
+        component="div"
         style={{
           position: 'absolute',
           left: String(x * 100) + '%',
@@ -36,20 +37,20 @@ export function BannerSection() {
         }}
       >
         <div class={square} />
-      </ParallaxBlock>,
+      </ParallaxItem>,
     );
   }
 
   return (
-    <header class={banner} ref={ref}>
-      <div>{containers}</div>
-      <div style={{ margin: 'auto' }}>
-        <ParallaxBlock layer={0}>
-          <span class={bannerText}>{NAME}</span>
-        </ParallaxBlock>
-      </div>
-      <ParallaxBlock layer={1}>
-        <div style={{ 'text-align': 'center' }}>
+    <header ref={ref} class={header}>
+      <ParallaxContainer component="div" class={starContainer}>
+        {stars}
+      </ParallaxContainer>
+      <ParallaxContainer component="div" class={banner}>
+        <ParallaxItem layer={0} component="p" class={bannerText}>
+          {NAME}
+        </ParallaxItem>
+        <ParallaxItem layer={1} component="div" style={{ 'text-align': 'center' }}>
           <ExpandMore
             style={{
               width: '48px',
@@ -59,8 +60,8 @@ export function BannerSection() {
             }}
             onClick={scrollDown}
           />
-        </div>
-      </ParallaxBlock>
+        </ParallaxItem>
+      </ParallaxContainer>
     </header>
   );
 }
