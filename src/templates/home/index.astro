@@ -1,13 +1,12 @@
 ---
-import { BackgroundImage, Profile } from "./components";
-import { StarsBackground } from './components/stars';
+import { BackgroundImage, Profile, type ProfileProps } from "./components";
+import { Links, type LinksProps } from "./components/links";
+import { StarsBackground } from "./components/stars";
 import LandscapeImage from "./landscape.png?url";
 
 type Props = {
-  name: string;
-  status: string;
-  profileUrl: string;
-  url: string;
+  profile: ProfileProps,
+  link: LinksProps,
 };
 ---
 
@@ -22,10 +21,8 @@ type Props = {
   <BackgroundImage imageUrl={LandscapeImage} client:load />
   <StarsBackground client:only="solid-js" />
   <Profile
-    name={Astro.props.name}
-    status={Astro.props.status}
-    profileUrl={Astro.props.profileUrl}
-    url={Astro.props.url}
+    {...Astro.props.profile}
     client:load
   />
+  <Links {...Astro.props.link} />
 </section>

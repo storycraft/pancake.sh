@@ -70,7 +70,6 @@
 
 .profile-name {
   user-select: none;
-  text-decoration: none;
   font-weight: 500;
   color: white;
   transition: color 0.3s;

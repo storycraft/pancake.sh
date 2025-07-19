@@ -10,6 +10,9 @@ const { data: profile } = await octokit.users.getByUsername({
   username: 'storycraft',
 });
 const email = 'storycraft@pancake.sh';
+
+const twitterUrl = 'https://x.com/storycraft8814';
+const youtubeUrl = 'https://www.youtube.com/@storycraft8814';
 ---
 
 <html>
@@ -20,10 +23,16 @@ const email = 'storycraft@pancake.sh';
   </head>
   <body>
     <Home
-      name={profile.name || ""}
-      status={profile.bio || ""}
-      profileUrl={profile.avatar_url}
-      url={profile.html_url}
+      profile={{
+        name: profile.name || '',
+        status: profile.bio || '',
+        imageUrl: profile.avatar_url,
+      }}
+      link={{
+        github: profile.html_url,
+        twitter: twitterUrl,
+        youtube: youtubeUrl,
+      }}
     />
     <Contact email={email} />
     <Footer

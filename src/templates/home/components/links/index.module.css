@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  color: rgba(255, 255, 255, .5);
+  background: linear-gradient(transparent, rgb(0, 0, 0, .25));
+  opacity: .5;
+  transition: opacity .5s;
+}
+
+.container:hover {
+  opacity: 1.0;
+}
+
+.icon {
+  text-decoration: none;
+  padding: 1rem;
+  color: inherit;
+  transition: color 0.5s;
+  box-sizing: border-box;
+}
+
+.icon:hover {
+  color: rgba(255, 255, 255, 1.0);
+}

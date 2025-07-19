@@ -33,14 +33,13 @@ export function BackgroundImage(
   );
 }
 
-export function Profile(
-  props: {
-    name: string,
-    status: string,
-    url: string,
-    profileUrl: string,
-  },
-) {
+export type ProfileProps = {
+  name: string,
+  status: string,
+  imageUrl: string,
+};
+
+export function Profile(props: ProfileProps) {
   return (
     <ParallaxContainer
       component="div"
@@ -56,11 +55,11 @@ export function Profile(
           <img
             draggable={false}
             class={profile}
-            src={props.profileUrl}
+            src={props.imageUrl}
           />
         </div>
         <div class={profileNameBox}>
-          <a class={profileName} href={props.url}>{props.name}</a>
+          <span class={profileName}>{props.name}</span>
           <span class={profileStatus}>{props.status}</span>
         </div>
       </ParallaxItem>
