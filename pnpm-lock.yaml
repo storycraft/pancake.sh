@@ -14,6 +14,9 @@ importers:
       '@suid/icons-material':
         specifier: ^0.9.0
         version: 0.9.0(solid-js@1.9.7)
+      '@suid/material':
+        specifier: ^0.19.0
+        version: 0.19.0(solid-js@1.9.7)
       astro:
         specifier: ^5.12.0
         version: 5.12.0(@types/node@24.0.14)(less@4.4.0)(rollup@4.45.1)(sass@1.89.2)(stylus@0.62.0)(typescript@5.8.3)(yaml@2.8.0)
