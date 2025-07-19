@@ -35,11 +35,12 @@
   height: 240px;
   clip-path: url(./profile-path.svg#clip);
   user-select: none;
-  transition: transform 1s ease-out;
+  transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .profile:active {
   transform: scale(.95, .95);
+  transition: transform 1s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .profile-image-box {
