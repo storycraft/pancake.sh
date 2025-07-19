@@ -1,5 +1,5 @@
 ---
-import { Contact } from './components';
+import { ContactForm } from '.';
 
 type Props = {
   email: string;
@@ -15,5 +15,5 @@ type Props = {
   }
 </style>
 <div class="contact-container">
-  <Contact email={Astro.props.email} client:only="solid-js" />
+  <ContactForm email={Astro.props.email} client:only="solid-js" />
 </div>

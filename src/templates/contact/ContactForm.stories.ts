@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
-import { fn } from 'storybook/test';
 import { ContactForm } from '.';
 
 export default {
@@ -10,7 +9,7 @@ export default {
   },
   tags: ['autodocs'],
   args: {
-    onSubmit: fn(),
+    email: 'example@example.com',
   },
 } satisfies Meta<typeof ContactForm>;
 
