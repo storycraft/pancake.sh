@@ -36,15 +36,14 @@ export function PageLoadingBar() {
     document.addEventListener('astro:after-preparation', afterPreparation);
     document.addEventListener('astro:before-swap', beforeSwap);
     document.addEventListener('astro:page-load', pageLoad);
-  }
 
-  onCleanup(() => {
-    if (isServer) return;
-    document.removeEventListener('astro:before-preparation', beforePreparation);
-    document.removeEventListener('astro:after-preparation', afterPreparation);
-    document.removeEventListener('astro:before-swap', beforeSwap);
-    document.removeEventListener('astro:page-load', pageLoad);
-  });
+    onCleanup(() => {
+      document.removeEventListener('astro:before-preparation', beforePreparation);
+      document.removeEventListener('astro:after-preparation', afterPreparation);
+      document.removeEventListener('astro:before-swap', beforeSwap);
+      document.removeEventListener('astro:page-load', pageLoad);
+    });
+  }
 
   return (
     <Show when={progress() !== 100}>

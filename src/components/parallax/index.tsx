@@ -21,16 +21,16 @@ export function ParallaxItem<T extends keyof JSX.HTMLElementTags>(props: Paralla
   let layerRef!: HTMLElement;
   const [position, setPosition] = createSignal<[number, number]>([0, 0]);
 
-  const handler = (e: MouseEvent) => {
-    if (navigator.maxTouchPoints <= 0) {
-      setPosition([
-        (e.screenX / window.outerWidth - 0.5) * 2,
-        (e.screenY / window.outerHeight - 0.5) * 2,
-      ]);
-    }
-  };
-
   if (!isServer) {
+    const handler = (e: MouseEvent) => {
+      if (navigator.maxTouchPoints <= 0) {
+        setPosition([
+          (e.screenX / window.outerWidth - 0.5) * 2,
+          (e.screenY / window.outerHeight - 0.5) * 2,
+        ]);
+      }
+    };
+
     window.addEventListener('mousemove', handler);
 
     let throttle = false;
@@ -44,13 +44,11 @@ export function ParallaxItem<T extends keyof JSX.HTMLElementTags>(props: Paralla
         layerRef.style.transform = `translate(${String(multipier * px)}rem,${String(multipier * py)}rem)`;
       });
     });
-  }
 
-  onCleanup(() => {
-    if (!isServer) {
+    onCleanup(() => {
       window.removeEventListener('mousemove', handler);
-    }
-  });
+    });
+  }
 
   return (
     <Dynamic
