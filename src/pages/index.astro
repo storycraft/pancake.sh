@@ -4,6 +4,7 @@ import "./index.css";
 import Home from "../templates/home/index.astro";
 import Contact from "../templates/contact/index.astro";
 import { Footer } from "../components/footer";
+import Router from '../templates/router/index.astro';
 
 const octokit = new Octokit();
 const { data: profile } = await octokit.users.getByUsername({
@@ -22,6 +23,7 @@ const youtubeUrl = 'https://www.youtube.com/@storycraft8814';
     <meta charset="utf-8" />
   </head>
   <body>
+    <Router />
     <Home
       profile={{
         name: profile.name || '',
@@ -39,5 +41,6 @@ const youtubeUrl = 'https://www.youtube.com/@storycraft8814';
       name={`${profile.name} / ${profile.login}`}
       email={email}
     />
+    <a href="/about">Test</a>
   </body>
 </html>

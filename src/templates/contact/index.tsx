@@ -1,14 +1,15 @@
 import { Button, createTheme, TextField, ThemeProvider, Typography } from '@suid/material';
 import { body, form } from './index.module.css';
+import { pink } from '@suid/material/colors';
 
 const contactTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#9575cd',
+      main: pink[400],
     },
     secondary: {
-      main: '#7e57c2',
+      main: pink[500],
     },
   },
 });

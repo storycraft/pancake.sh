@@ -1,0 +1,7 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { PageLoadingBar } from './components';
+---
+
+<PageLoadingBar client:load transition:persist />
+<ClientRouter />
