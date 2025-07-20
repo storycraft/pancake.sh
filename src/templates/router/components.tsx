@@ -1,6 +1,6 @@
 import { createTheme, LinearProgress, ThemeProvider } from '@suid/material';
 import { container } from './components.module.css';
-import { createSignal, onCleanup, onMount, Show } from 'solid-js';
+import { createSignal, onCleanup, Show } from 'solid-js';
 import { isServer } from 'solid-js/web';
 import { pink } from '@suid/material/colors';
 
@@ -31,13 +31,12 @@ export function PageLoadingBar() {
     setProgress(100);
   }
 
-  onMount(() => {
-    if (isServer) return;
+  if (!isServer) {
     document.addEventListener('astro:before-preparation', beforePreparation);
     document.addEventListener('astro:after-preparation', afterPreparation);
     document.addEventListener('astro:before-swap', beforeSwap);
     document.addEventListener('astro:page-load', pageLoad);
-  });
+  }
 
   onCleanup(() => {
     if (isServer) return;

@@ -1,4 +1,4 @@
-import { createRenderEffect, createSignal, onCleanup, onMount, type JSX } from 'solid-js';
+import { createRenderEffect, createSignal, onCleanup, type JSX } from 'solid-js';
 import { Dynamic, isServer, type DynamicProps } from 'solid-js/web';
 import { container } from './index.module.css';
 
@@ -30,9 +30,7 @@ export function ParallaxItem<T extends keyof JSX.HTMLElementTags>(props: Paralla
     }
   };
 
-  onMount(() => {
-    if (isServer) return;
-
+  if (!isServer) {
     window.addEventListener('mousemove', handler);
 
     let throttle = false;
@@ -46,7 +44,7 @@ export function ParallaxItem<T extends keyof JSX.HTMLElementTags>(props: Paralla
         layerRef.style.transform = `translate(${String(multipier * px)}rem,${String(multipier * py)}rem)`;
       });
     });
-  });
+  }
 
   onCleanup(() => {
     if (!isServer) {
