@@ -24,6 +24,10 @@ const contact = {
   </head>
   <body>
     <slot />
-    <Footer name={`${contact.name} / ${contact.id}`} email={contact.email} />
+    <Footer
+      transition:persist
+      name={`${contact.name} / ${contact.id}`}
+      email={contact.email}
+    />
   </body>
 </html>
