@@ -1,7 +1,6 @@
 ---
 import './global.css';
 import Router from '@templates/router/index.astro';
-import { footer, text } from './index.module.css';
 
 export type Props = {
   title: string;
@@ -20,13 +19,22 @@ const contact = {
     <meta name="viewport" content="initial-scale=1.0" />
     <meta charset="utf-8" />
     <Router />
+    <style>
+      .footer {
+        padding: 3rem 3rem;
+      }
+
+      .text {
+        color: rgb(120, 120, 120);
+      }
+    </style>
   </head>
   <body>
     <slot />
-    <footer class={footer} transition:persist>
-      <p class={text}>Contact Detail</p>
-      <span class={text}>{contact.name} / {contact.id}</span>
-      <address class={text}>{contact.email}</address>
+    <footer class="footer" transition:persist>
+      <p class="text">Contact Detail</p>
+      <span class="text">{contact.name} / {contact.id}</span>
+      <address class="text">{contact.email}</address>
     </footer>
   </body>
 </html>

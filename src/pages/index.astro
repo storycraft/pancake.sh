@@ -3,8 +3,11 @@ import { Octokit } from '@octokit/rest';
 import Home from '@templates/home/index.astro';
 import Contact from '@templates/contact/index.astro';
 import Page from '@templates/page/index.astro';
+import { GITHUB_TOKEN } from 'astro:env/server';
 
-const octokit = new Octokit();
+const octokit = new Octokit({
+  auth: GITHUB_TOKEN,
+});
 const { data: profile } = await octokit.users.getByUsername({
   username: 'storycraft',
 });

@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import solidJs from '@astrojs/solid-js';
 import suidPlugin from '@suid/vite-plugin';
@@ -20,4 +20,9 @@ export default defineConfig({
   integrations: [
     solidJs(),
   ],
+  env: {
+    schema: {
+      GITHUB_TOKEN: envField.string({ context: 'server', access: 'secret', optional: true }),
+    },
+  },
 });
