@@ -1,18 +1,17 @@
 ---
 import './global.css';
 import Router from '@templates/router/index.astro';
-import { Footer } from '@components/footer';
+import { footer, text } from './index.module.css';
 
 export type Props = {
-  title: string,
+  title: string;
 };
 
 const contact = {
-  name: '스도리',
-  id: 'storycraft',
-  email: 'storycraft@pancake.sh',
+  name: "스도리",
+  id: "storycraft",
+  email: "storycraft@pancake.sh",
 };
-
 ---
 
 <html>
@@ -24,10 +23,10 @@ const contact = {
   </head>
   <body>
     <slot />
-    <Footer
-      transition:persist
-      name={`${contact.name} / ${contact.id}`}
-      email={contact.email}
-    />
+    <footer class={footer} transition:persist>
+      <p class={text}>Contact Detail</p>
+      <span class={text}>{contact.name} / {contact.id}</span>
+      <address class={text}>{contact.email}</address>
+    </footer>
   </body>
 </html>
