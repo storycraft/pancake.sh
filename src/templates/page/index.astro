@@ -1,0 +1,29 @@
+---
+import './global.css';
+import Router from '@templates/router/index.astro';
+import { Footer } from '@components/footer';
+
+export type Props = {
+  title: string,
+};
+
+const contact = {
+  name: '스도리',
+  id: 'storycraft',
+  email: 'storycraft@pancake.sh',
+};
+
+---
+
+<html>
+  <head>
+    <title>{Astro.props.title}</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <Router />
+  </head>
+  <body>
+    <slot />
+    <Footer name={`${contact.name} / ${contact.id}`} email={contact.email} />
+  </body>
+</html>

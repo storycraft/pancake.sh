@@ -10,7 +10,7 @@ import {
   profileStatus,
   profileNameBox,
 } from './index.module.css';
-import { ParallaxContainer, ParallaxItem } from '../../components/parallax';
+import { ParallaxContainer, ParallaxItem } from '@components/parallax';
 import ProfileBorder from './profile-border.svg?solid';
 
 export function BackgroundImage(

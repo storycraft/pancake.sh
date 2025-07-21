@@ -1,5 +1,5 @@
 import type { JSX } from 'solid-js/jsx-runtime';
-import { ParallaxContainer, ParallaxItem } from '../../../../components/parallax';
+import { ParallaxContainer, ParallaxItem } from '@components/parallax';
 import { container, star } from './index.module.css';
 
 export function StarsBackground() {

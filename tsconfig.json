@@ -19,7 +19,18 @@
       {
         "name": "@astrojs/ts-plugin"
       }
-    ]
+    ],
+    "paths": {
+      "@templates/*": [
+        "./src/templates/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ]
+    }
   },
   "files": [
     "./eslint.config.mjs",

@@ -1,10 +1,8 @@
 ---
-import { Octokit } from "@octokit/rest";
-import "./index.css";
-import Home from "../templates/home/index.astro";
-import Contact from "../templates/contact/index.astro";
-import { Footer } from "../components/footer";
-import Router from '../templates/router/index.astro';
+import { Octokit } from '@octokit/rest';
+import Home from '@templates/home/index.astro';
+import Contact from '@templates/contact/index.astro';
+import Page from '@templates/page/index.astro';
 
 const octokit = new Octokit();
 const { data: profile } = await octokit.users.getByUsername({
@@ -16,31 +14,19 @@ const twitterUrl = 'https://x.com/storycraft8814';
 const youtubeUrl = 'https://www.youtube.com/@storycraft8814';
 ---
 
-<html>
-  <head>
-    <title>Access a new world!</title>
-    <meta name="viewport" content="initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <Router />
-  </head>
-  <body>
-    <Home
-      profile={{
-        name: profile.name || '',
-        status: profile.bio || '',
-        imageUrl: profile.avatar_url,
-      }}
-      link={{
-        github: profile.html_url,
-        twitter: twitterUrl,
-        youtube: youtubeUrl,
-      }}
-    />
-    <Contact email={email} />
-    <Footer
-      name={`${profile.name} / ${profile.login}`}
-      email={email}
-    />
-    <a href="/about">Test</a>
-  </body>
-</html>
+<Page title="Access a new world!">
+  <Home
+    profile={{
+      name: profile.name || "",
+      status: profile.bio || "",
+      imageUrl: profile.avatar_url,
+    }}
+    link={{
+      github: profile.html_url,
+      twitter: twitterUrl,
+      youtube: youtubeUrl,
+    }}
+  />
+  <Contact email={email} />
+  <a href="/about">Test</a>
+</Page>
