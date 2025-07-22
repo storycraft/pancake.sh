@@ -1,35 +1,23 @@
 ---
-import { Octokit } from '@octokit/rest';
-import Home from '@templates/home/index.astro';
-import Contact from '@templates/contact/index.astro';
-import Page from '@templates/page/index.astro';
-import { GITHUB_TOKEN } from 'astro:env/server';
-
-const octokit = new Octokit({
-  auth: GITHUB_TOKEN,
-});
-const { data: profile } = await octokit.users.getByUsername({
-  username: 'storycraft',
-});
-const email = 'storycraft@pancake.sh';
-
-const twitterUrl = 'https://x.com/storycraft8814';
-const youtubeUrl = 'https://www.youtube.com/@storycraft8814';
+import Home from "@templates/home/index.astro";
+import Contact from "@templates/contact/index.astro";
+import Page from "@templates/page/index.astro";
+import { user } from '../user';
 ---
 
 <Page title="Access a new world!">
   <Home
     profile={{
-      name: profile.name || "",
-      status: profile.bio || "",
-      imageUrl: profile.avatar_url,
+      name: user.profile.name || "",
+      status: user.profile.statusMessage || "",
+      imageUrl: user.profile.avatarUrl,
     }}
     link={{
-      github: profile.html_url,
-      twitter: twitterUrl,
-      youtube: youtubeUrl,
+      github: user.loginId,
+      twitter: user.socials.twitter,
+      youtube: user.socials.youtube,
     }}
   />
-  <Contact email={email} />
+  {user.email && <Contact email={user.email} />}
   <a href="/about">Test</a>
 </Page>

@@ -1,4 +1,5 @@
 ---
+import { user } from '../../user';
 import './global.css';
 import Router from '@templates/router/index.astro';
 
@@ -6,11 +7,6 @@ export type Props = {
   title: string;
 };
 
-const contact = {
-  name: "스도리",
-  id: "storycraft",
-  email: "storycraft@pancake.sh",
-};
 ---
 
 <html>
@@ -33,8 +29,8 @@ const contact = {
     <slot />
     <footer class="footer" transition:persist>
       <p class="text">Contact Detail</p>
-      <span class="text">{contact.name} / {contact.id}</span>
-      <address class="text">{contact.email}</address>
+      <span class="text">{user.profile.name} / {user.loginId}</span>
+      <address class="text">{user.email}</address>
     </footer>
   </body>
 </html>
