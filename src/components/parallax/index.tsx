@@ -25,8 +25,8 @@ export function ParallaxItem<T extends keyof JSX.HTMLElementTags>(props: Paralla
     const handler = (e: MouseEvent) => {
       if (navigator.maxTouchPoints <= 0) {
         setPosition([
-          (e.screenX / window.outerWidth - 0.5) * 2,
-          (e.screenY / window.outerHeight - 0.5) * 2,
+          (e.clientX / window.innerWidth - 0.5) * 2,
+          (e.clientY / window.innerHeight - 0.5) * 2,
         ]);
       }
     };
