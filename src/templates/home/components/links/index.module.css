@@ -4,7 +4,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: 1rem;
+  padding: 12px;
   box-sizing: border-box;
   display: flex;
   color: rgba(255, 255, 255, .8);
@@ -19,7 +19,7 @@
 
 .icon {
   text-decoration: none;
-  padding: 1rem;
+  padding: 16px;
   color: inherit;
   transition: color 0.5s;
   box-sizing: border-box;

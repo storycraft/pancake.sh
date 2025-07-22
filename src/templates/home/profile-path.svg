@@ -1,15 +1,15 @@
-<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" version="1.1">
   <clipPath id="clip">
 <path d="
-M 0 120
-C 0 30, 30 0, 120 0
-S 240 30, 240 120, 210 240
-120 240, 0 210, 0 120
+M 0 96
+C 0 24, 24 0, 96 0
+S 192 24, 192 96, 168 192
+96 192, 0 168, 0 96
 " transform="
 rotate(
 0,
-120,
-120
+96,
+96
 )
 translate(
 0,

@@ -1,7 +1,9 @@
 ---
+import { SubSiteHeader } from '@components/header';
 import Page from '@templates/page/index.astro';
 ---
 
 <Page title="About">
+  <SubSiteHeader client:load />
   <p>Hello world</p>
 </Page>
