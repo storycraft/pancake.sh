@@ -22,7 +22,7 @@ export default defineConfig({
   ],
   env: {
     schema: {
-      GITHUB_TOKEN: envField.string({ context: 'server', access: 'secret' }),
+      PAT_GITHUB: envField.string({ context: 'server', access: 'secret' }),
     },
   },
 });

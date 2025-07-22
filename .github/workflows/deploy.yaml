@@ -27,7 +27,7 @@ jobs:
       - name: Render pages
         run: pnpm build
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_GITHUB: ${{ secrets.PAT_GITHUB }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

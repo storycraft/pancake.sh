@@ -1,8 +1,8 @@
 import { Octokit } from '@octokit/rest';
-import { GITHUB_TOKEN } from 'astro:env/server';
+import { PAT_GITHUB } from 'astro:env/server';
 
 const octokit = new Octokit({
-  auth: GITHUB_TOKEN,
+  auth: PAT_GITHUB,
 });
 
 const { data } = await octokit.users.getAuthenticated();
