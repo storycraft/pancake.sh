@@ -12,13 +12,13 @@ export function Links(props: LinksProps) {
   return (
     <div class={container}>
       <Show when={props.github}>
-        {name => <a class={icon} href={`https://github.com/${name()}`}><FaBrandsGithub size={28} /></a>}
+        {name => <a class={icon} href={`https://github.com/${name()}`}><FaBrandsGithub /></a>}
       </Show>
       <Show when={props.twitter}>
-        {name => <a class={icon} href={`https://x.com/${name()}`}><FaBrandsTwitter size={28} /></a>}
+        {name => <a class={icon} href={`https://x.com/${name()}`}><FaBrandsTwitter /></a>}
       </Show>
       <Show when={props.youtube}>
-        {name => <a class={icon} href={`https://www.youtube.com/@${name()}`}><FaBrandsYoutube size={28} /></a>}
+        {name => <a class={icon} href={`https://www.youtube.com/@${name()}`}><FaBrandsYoutube /></a>}
       </Show>
     </div>
   );

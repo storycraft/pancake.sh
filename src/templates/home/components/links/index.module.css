@@ -6,7 +6,6 @@
   bottom: 0;
   padding: 1rem;
   box-sizing: border-box;
-  line-height: 0;
   display: flex;
   color: rgba(255, 255, 255, .8);
   background: linear-gradient(transparent, rgb(0, 0, 0, .2));
@@ -24,6 +23,8 @@
   color: inherit;
   transition: color 0.5s;
   box-sizing: border-box;
+  line-height: 0;
+  font-size: 28px;
 }
 
 .icon:hover {
