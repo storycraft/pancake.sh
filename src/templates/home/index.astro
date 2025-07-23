@@ -1,9 +1,10 @@
 ---
 import { HomeHeader } from '@components/header';
-import { BackgroundImage, Profile, type ProfileProps } from './components';
+import { HomeBackground, Profile, type ProfileProps } from './components';
 import { Links, type LinksProps } from './components/links';
-import { StarsBackground } from './components/stars';
+import ParallaxStars from './components/stars/index.astro';
 import LandscapeImage from './landscape.png?url';
+import { ParallaxContainer } from '@components/parallax';
 
 type Props = {
   profile: ProfileProps,
@@ -12,19 +13,31 @@ type Props = {
 ---
 
 <style>
-  .container {
+  .home-container {
     background-color: rgb(20, 20, 28);
     position: relative;
     height: 100svh;
   }
+
+  .overlay-container {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
 </style>
-<section class="container">
-  <BackgroundImage imageUrl={LandscapeImage} client:load />
-  <StarsBackground client:only="solid-js" />
+<section class="home-container">
+  <HomeBackground imageUrl={LandscapeImage} client:load />
+  <ParallaxContainer component="div" class="overlay-container">
+    <HomeHeader client:load />
+    <ParallaxStars />
+    <Links {...Astro.props.link} />
+  </ParallaxContainer>
   <Profile
     {...Astro.props.profile}
     client:load
   />
-  <HomeHeader client:load />
-  <Links {...Astro.props.link} />
 </section>

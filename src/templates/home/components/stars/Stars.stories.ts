@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
-import { StarsBackground } from '.';
+import { Stars } from '.';
 
 export default {
-  title: 'StarsBackground',
-  component: StarsBackground,
+  title: 'Stars',
+  component: Stars,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof StarsBackground>;
+} satisfies Meta<typeof Stars>;
 
-type Story = StoryObj<Meta<typeof StarsBackground>>;
+type Story = StoryObj<Meta<typeof Stars>>;
 
 export const Primary: Story = {
   args: {},

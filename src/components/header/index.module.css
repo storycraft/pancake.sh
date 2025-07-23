@@ -6,9 +6,6 @@
 }
 
 .home-container {
-  position: absolute;
-  left: 0;
-  top: 0;
   background: linear-gradient(rgb(0, 0, 0, .2), transparent);
 }
 

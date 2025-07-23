@@ -13,7 +13,7 @@ import {
 import { ParallaxContainer, ParallaxItem } from '@components/parallax';
 import ProfileBorder from './profile-border.svg?solid';
 
-export function BackgroundImage(
+export function HomeBackground(
   props: { imageUrl: string, },
 ) {
   return (
@@ -23,11 +23,9 @@ export function BackgroundImage(
     >
       <ParallaxItem
         layer={0}
-        component="div"
+        component="img"
         class={background}
-        style={{
-          'background-image': `url(${props.imageUrl})`,
-        }}
+        src={props.imageUrl}
       />
     </ParallaxContainer>
   );

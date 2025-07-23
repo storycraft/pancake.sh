@@ -1,8 +1,8 @@
 import type { JSX } from 'solid-js/jsx-runtime';
-import { ParallaxContainer, ParallaxItem } from '@components/parallax';
-import { container, star } from './index.module.css';
+import { ParallaxItem } from '@components/parallax';
+import { star } from './index.module.css';
 
-export function StarsBackground() {
+export function Stars() {
   const stars: JSX.Element[] = [];
   const count = 16 + Math.floor(Math.random() * 8);
   let oX = 0.01;
@@ -29,9 +29,5 @@ export function StarsBackground() {
     );
   }
 
-  return (
-    <ParallaxContainer component="div" class={container}>
-      {stars}
-    </ParallaxContainer>
-  );
+  return stars;
 }
