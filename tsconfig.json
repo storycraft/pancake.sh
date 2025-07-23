@@ -34,6 +34,7 @@
   },
   "files": [
     "./eslint.config.mjs",
+    "./vite.config.ts",
     "./astro.config.ts",
     ".astro/types.d.ts"
   ],
